@@ -8,6 +8,10 @@ target 'SFTool_Example' do
   target 'SFTool_Tests' do
     inherit! :search_paths
 
-    pod 'FBSnapshotTestCase'
+    #pod 'FBSnapshotTestCase'
   end
+  
+  pod 'SFCategory', :git => 'https://github.com/jack110530/SFCategory.git', :branch => 'master'
+  pod 'SFMacro', :git => 'https://github.com/jack110530/SFMacro.git', :branch => 'master'
+  
 end

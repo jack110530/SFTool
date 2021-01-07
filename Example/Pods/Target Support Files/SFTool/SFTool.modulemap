@@ -1,0 +1,6 @@
+framework module SFTool {
+  umbrella header "SFTool-umbrella.h"
+
+  export *
+  module * { export * }
+}

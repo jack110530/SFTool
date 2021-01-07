@@ -30,13 +30,17 @@ TODO: Add long description of the pod here.
 
   s.ios.deployment_target = '9.0'
 
+  s.public_header_files = 'SFTool/Class/SFTool.h'
   s.source_files = 'SFTool/Classes/**/*'
   
   # s.resource_bundles = {
   #   'SFTool' => ['SFTool/Assets/*.png']
   # }
 
-  # s.public_header_files = 'Pod/Classes/**/*.h'
-  # s.frameworks = 'UIKit', 'MapKit'
-  # s.dependency 'AFNetworking', '~> 2.3'
+  s.frameworks = 'UIKit', 'Foundation'
+  s.dependency 'Masonry'
+  s.dependency 'SFCategory'
+  s.dependency 'SFMacro'
+
+  
 end

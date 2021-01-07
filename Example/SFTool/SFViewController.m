@@ -8,6 +8,8 @@
 
 #import "SFViewController.h"
 
+#import <SFTool/SFTool.h>
+
 @interface SFViewController ()
 
 @end
@@ -17,7 +19,14 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view, typically from a nib.
+    UIButton *btn = [UIButton buttonWithType:UIButtonTypeClose];
+    btn.frame = CGRectMake(100, 100, 100, 100);
+    [btn addTarget:self action:@selector(btnClick) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:btn];
+}
+
+- (void)btnClick {
+    [SFPhotoPicker showIn:self title:@"小星星" msg:@"你就是我的小星星"];
 }
 
 - (void)didReceiveMemoryWarning

@@ -1,0 +1,75 @@
+PODS:
+  - Masonry (1.1.0)
+  - SFCategory (0.1.1):
+    - SFCategory/SFFoundation (= 0.1.1)
+    - SFCategory/SFKit (= 0.1.1)
+    - YYCategories
+  - SFCategory/SFFoundation (0.1.1):
+    - SFCategory/SFFoundation/NSObject (= 0.1.1)
+    - SFCategory/SFFoundation/NSString (= 0.1.1)
+    - YYCategories
+  - SFCategory/SFFoundation/NSObject (0.1.1):
+    - YYCategories
+  - SFCategory/SFFoundation/NSString (0.1.1):
+    - YYCategories
+  - SFCategory/SFKit (0.1.1):
+    - SFCategory/SFKit/UIButton (= 0.1.1)
+    - SFCategory/SFKit/UIImage (= 0.1.1)
+    - SFCategory/SFKit/UIView (= 0.1.1)
+    - SFCategory/SFKit/UIViewController (= 0.1.1)
+    - YYCategories
+  - SFCategory/SFKit/UIButton (0.1.1):
+    - YYCategories
+  - SFCategory/SFKit/UIImage (0.1.1):
+    - YYCategories
+  - SFCategory/SFKit/UIView (0.1.1):
+    - YYCategories
+  - SFCategory/SFKit/UIViewController (0.1.1):
+    - YYCategories
+  - SFMacro (0.1.1)
+  - SFTool (0.1.0):
+    - Masonry
+    - SFCategory
+    - SFMacro
+  - YYCategories (1.0.4):
+    - YYCategories/no-arc (= 1.0.4)
+  - YYCategories/no-arc (1.0.4)
+
+DEPENDENCIES:
+  - SFCategory (from `https://github.com/jack110530/SFCategory.git`, branch `master`)
+  - SFMacro (from `https://github.com/jack110530/SFMacro.git`, branch `master`)
+  - SFTool (from `../`)
+
+SPEC REPOS:
+  trunk:
+    - Masonry
+    - YYCategories
+
+EXTERNAL SOURCES:
+  SFCategory:
+    :branch: master
+    :git: https://github.com/jack110530/SFCategory.git
+  SFMacro:
+    :branch: master
+    :git: https://github.com/jack110530/SFMacro.git
+  SFTool:
+    :path: "../"
+
+CHECKOUT OPTIONS:
+  SFCategory:
+    :commit: 172cafe1552652461723f2d0586bfe99078e7aa4
+    :git: https://github.com/jack110530/SFCategory.git
+  SFMacro:
+    :commit: 218f0edd943751fbce262f274e2ae373d36e5e90
+    :git: https://github.com/jack110530/SFMacro.git
+
+SPEC CHECKSUMS:
+  Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
+  SFCategory: 4adc606da20bcce6620f10a89cda3dc2b105274c
+  SFMacro: feaf9eaac7cfa4797a99a3d8119895ff843335fe
+  SFTool: 106f465cc666e4d6812e6852b67b642d3c978bc8
+  YYCategories: 6bcd4314c6661a561410dce4a793379ebd306abd
+
+PODFILE CHECKSUM: 1804d215938b20a8da7178ed701f4b34d28dd9cf
+
+COCOAPODS: 1.9.3
