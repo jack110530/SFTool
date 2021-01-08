@@ -9,6 +9,8 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+// TODO: 1. 时分秒背景圆角
+
 @interface SFCountdownLabel : UILabel
 
 /**
@@ -37,11 +39,11 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic,copy) NSString *fmt_deadline;
 /// 默认：@"天 "
 @property (nonatomic,copy) NSString *fmt_day;
-/// 默认：@":"
+/// 默认：@"时"
 @property (nonatomic,copy) NSString *fmt_hour;
-/// 默认：@":"
+/// 默认：@"分"
 @property (nonatomic,copy) NSString *fmt_minute;
-/// 默认：@""
+/// 默认：@"秒"
 @property (nonatomic,copy) NSString *fmt_seconds;
 /// 默认：@“已结束”
 @property (nonatomic,copy) NSString *fmt_exceeded;

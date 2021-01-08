@@ -25,14 +25,28 @@
     [self.view addSubview:btn];
     
     
-    SFCountdownLabel *label = [[SFCountdownLabel alloc]initWithFrame:CGRectMake(100, 300, 200, 40)];
-    label.backgroundColor = [UIColor cyanColor];
-    label.font = [UIFont systemFontOfSize:15];
-    label.textAlignment = NSTextAlignmentCenter;
-    label.deadline = [[NSDate date] timeIntervalSince1970] + (5*24*3600) + 5;
+    SFCountdownLabel *label = [[SFCountdownLabel alloc]initWithFrame:CGRectMake(50, 300, 300, 40)];
+    label.deadline = [[NSDate date] timeIntervalSince1970] + (3*24*3600) + 5;
     label.countdownDidFinishedBlock = ^{
         NSLog(@"倒计时完成");
     };
+    
+    // 自定义配置(可选)
+    label.backgroundColor = [UIColor cyanColor];
+    label.font = [UIFont systemFontOfSize:15];
+    label.textAlignment = NSTextAlignmentCenter;
+    label.fmt_deadline = @"活动截止到yyyy-MM-dd HH:mm:ss";
+    label.fmt_day = @"天";
+    label.fmt_hour = @":";
+    label.fmt_minute = @":";
+    label.fmt_seconds = @"";
+    label.fmt_exceeded = @"秒杀活动已结束";
+    label.unitColor = [UIColor blackColor];
+    label.valueColor = [UIColor whiteColor];
+    label.dayColor = [UIColor redColor];
+    label.deadlineColor = [UIColor blueColor];
+    label.exceededColor = [UIColor redColor];
+    
     [self.view addSubview:label];
     
 }
