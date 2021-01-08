@@ -15,9 +15,7 @@
 @end
 
 @implementation SFPhotoPicker
-- (void)dealloc {
-    NSLog(@"%s", __func__);
-}
+
 #pragma mark - 单例
 SFSingleton_m(Picker)
 

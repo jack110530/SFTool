@@ -23,6 +23,18 @@
     btn.frame = CGRectMake(100, 100, 100, 100);
     [btn addTarget:self action:@selector(btnClick) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:btn];
+    
+    
+    SFCountdownLabel *label = [[SFCountdownLabel alloc]initWithFrame:CGRectMake(100, 300, 200, 40)];
+    label.backgroundColor = [UIColor cyanColor];
+    label.font = [UIFont systemFontOfSize:15];
+    label.textAlignment = NSTextAlignmentCenter;
+    label.deadline = [[NSDate date] timeIntervalSince1970] + (5*24*3600) + 5;
+    label.countdownDidFinishedBlock = ^{
+        NSLog(@"倒计时完成");
+    };
+    [self.view addSubview:label];
+    
 }
 
 - (void)btnClick {
