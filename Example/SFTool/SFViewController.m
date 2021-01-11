@@ -7,11 +7,14 @@
 //
 
 #import "SFViewController.h"
+// demo
+#import "SFCountdownLabelDemo.h"
 
 #import <SFTool/SFTool.h>
 
-@interface SFViewController ()
-
+@interface SFViewController ()<UITableViewDelegate,UITableViewDataSource>
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
+@property (nonatomic,copy) NSArray *datas;
 @end
 
 @implementation SFViewController
@@ -19,37 +22,30 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    UIButton *btn = [UIButton buttonWithType:UIButtonTypeClose];
-    btn.frame = CGRectMake(100, 100, 100, 100);
-    [btn addTarget:self action:@selector(btnClick) forControlEvents:UIControlEventTouchUpInside];
-    [self.view addSubview:btn];
-    
-    
-    SFCountdownLabel *label = [[SFCountdownLabel alloc]initWithFrame:CGRectMake(50, 300, 300, 40)];
-    label.deadline = [[NSDate date] timeIntervalSince1970] + (3*24*3600) + 5;
-    label.countdownDidFinishedBlock = ^{
-        NSLog(@"倒计时完成");
-    };
-    
-    // 自定义配置(可选)
-    label.backgroundColor = [UIColor cyanColor];
-    label.font = [UIFont systemFontOfSize:15];
-    label.textAlignment = NSTextAlignmentCenter;
-    label.fmt_deadline = @"活动截止到yyyy-MM-dd HH:mm:ss";
-    label.fmt_day = @"天";
-    label.fmt_hour = @":";
-    label.fmt_minute = @":";
-    label.fmt_seconds = @"";
-    label.fmt_exceeded = @"秒杀活动已结束";
-    label.unitColor = [UIColor blackColor];
-    label.valueColor = [UIColor whiteColor];
-    label.dayColor = [UIColor redColor];
-    label.deadlineColor = [UIColor blueColor];
-    label.exceededColor = [UIColor redColor];
-    
-    [self.view addSubview:label];
-    
+    self.tableView.delegate = self;
+    self.tableView.dataSource = self;
+    self.datas = @[@"SFCountdownLabelDemo"];
 }
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return self.datas.count;
+}
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell"];
+    if (!cell) {
+        cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"cell"];
+    }
+    cell.textLabel.text = self.datas[indexPath.row];
+    return cell;
+}
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
+    NSString *clsStr = cell.textLabel.text;
+    Class cls = NSClassFromString(clsStr);
+    [self.navigationController pushViewController:[[cls alloc]init] animated:YES];
+}
+
 
 - (void)btnClick {
     [SFPhotoPicker showIn:self title:@"小星星" msg:@"你就是我的小星星"];
