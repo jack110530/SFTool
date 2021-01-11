@@ -41,6 +41,7 @@ TODO: Add long description of the pod here.
   s.dependency 'Masonry'
   s.dependency 'SFCategory'
   s.dependency 'SFMacro'
+  s.dependency 'SFCrashInspector'
 
   
 end

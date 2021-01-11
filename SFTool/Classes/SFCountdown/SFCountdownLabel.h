@@ -51,10 +51,13 @@ NS_ASSUME_NONNULL_BEGIN
 
 /// 天数颜色（如，2天 12:30:05中的“2”）默认：红色
 @property (nonatomic,strong) UIColor *dayColor;
-/// 单位颜色（如，2天 12:30:05中的“天”、“:”），默认：黑色
-@property (nonatomic,strong) UIColor *unitColor;
-/// 倒计时颜色（如，12:30:05中的数字），默认：黑色
-@property (nonatomic,strong) UIColor *valueColor;
+/// 天数单位颜色（如，2天 12:30:05中的“天”）默认：红色
+@property (nonatomic,strong) UIColor *dayUnitColor;
+/// 倒计时颜色（如，12:30:05中的数字，时分秒），默认：白色
+@property (nonatomic,strong) UIColor *hmsColor;
+/// 倒计时单位颜色（如，2天 12:30:05中的“:”，时分秒），默认：黑色
+@property (nonatomic,strong) UIColor *hmsUnitColor;
+
 /// 截止时间颜色，默认：黑色
 @property (nonatomic,strong) UIColor *deadlineColor;
 /// 已结束颜色，默认：灰色

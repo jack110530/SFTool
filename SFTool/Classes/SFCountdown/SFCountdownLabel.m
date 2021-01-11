@@ -10,8 +10,8 @@
 
 #define SFDefaultFmt_deadline   @"yyyy/MM/dd HH:mm:ss截止"
 #define SFDefaultFmt_day        @"天"
-#define SFDefaultFmt_hour       @"分"
-#define SFDefaultFmt_minute     @"秒"
+#define SFDefaultFmt_hour       @"时"
+#define SFDefaultFmt_minute     @"分"
 #define SFDefaultFmt_seconds    @"秒"
 #define SFDefaultFmt_exceeded   @"已结束"
 
@@ -20,8 +20,9 @@
 #define SFDefaultT3 (0*24*3600)
 
 #define SFDefaultColor_day      [UIColor redColor]
-#define SFDefaultColor_unit     [UIColor blackColor]
-#define SFDefaultColor_value    [UIColor whiteColor]
+#define SFDefaultColor_dayUnit  [UIColor redColor]
+#define SFDefaultColor_hms      [UIColor whiteColor]
+#define SFDefaultColor_hmsUnit  [UIColor blackColor]
 #define SFDefaultColor_deadline [UIColor blackColor]
 #define SFDefaultColor_exceeded [UIColor grayColor]
 
@@ -127,7 +128,7 @@
                           value:[UIFont boldSystemFontOfSize:self.font.pointSize]
                           range:self.range_day];
         [mtAttrStr addAttribute:NSForegroundColorAttributeName
-                          value:self.unitColor?:SFDefaultColor_unit
+                          value:self.dayUnitColor?:SFDefaultColor_dayUnit
                           range:self.range_dayUnit];
         [self addCustomAttributeForUnit:mtAttrStr];
         [self addCustomAttributeForValue:mtAttrStr];
@@ -216,34 +217,34 @@
 }
 - (void)addCustomAttributeForUnit:(NSMutableAttributedString *)mtAttrStr {
     [mtAttrStr addAttribute:NSForegroundColorAttributeName
-                      value:self.unitColor?:SFDefaultColor_unit
+                      value:self.hmsUnitColor?:SFDefaultColor_hmsUnit
                       range:self.range_hourUnit];
     [mtAttrStr addAttribute:NSForegroundColorAttributeName
-                      value:self.unitColor?:SFDefaultColor_unit
+                      value:self.hmsUnitColor?:SFDefaultColor_hmsUnit
                       range:self.range_minuteUnit];
     [mtAttrStr addAttribute:NSForegroundColorAttributeName
-                      value:self.unitColor?:SFDefaultColor_unit
+                      value:self.hmsUnitColor?:SFDefaultColor_hmsUnit
                       range:self.range_secondsUnit];
 }
 - (void)addCustomAttributeForValue:(NSMutableAttributedString *)mtAttrStr {
     [mtAttrStr addAttribute:NSForegroundColorAttributeName
-                      value:self.valueColor?:SFDefaultColor_value
+                      value:self.hmsColor?:SFDefaultColor_hms
                       range:self.range_hour];
     [mtAttrStr addAttribute:NSForegroundColorAttributeName
-                      value:self.valueColor?:SFDefaultColor_value
+                      value:self.hmsColor?:SFDefaultColor_hms
                       range:self.range_minute];
     [mtAttrStr addAttribute:NSForegroundColorAttributeName
-                      value:self.valueColor?:SFDefaultColor_value
+                      value:self.hmsColor?:SFDefaultColor_hms
                       range:self.range_seconds];
     
     [mtAttrStr addAttribute:NSBackgroundColorAttributeName
-                      value:self.unitColor?:SFDefaultColor_unit
+                      value:self.hmsUnitColor?:SFDefaultColor_hmsUnit
                       range:self.range_hour];
     [mtAttrStr addAttribute:NSBackgroundColorAttributeName
-                      value:self.unitColor?:SFDefaultColor_unit
+                      value:self.hmsUnitColor?:SFDefaultColor_hmsUnit
                       range:self.range_minute];
     [mtAttrStr addAttribute:NSBackgroundColorAttributeName
-                      value:self.unitColor?:SFDefaultColor_unit
+                      value:self.hmsUnitColor?:SFDefaultColor_hmsUnit
                       range:self.range_seconds];
 }
 
@@ -264,6 +265,7 @@
     return 0;
 }
 SFLazyLoad(NSTimer, timer, {
+    // 这里的循环引用问题，会在SFCrashInspector库中解决
     _timer = [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(timerEvent:) userInfo:nil repeats:YES];
     [[NSRunLoop mainRunLoop] addTimer:_timer forMode:NSRunLoopCommonModes];
     [_timer setFireDate:[NSDate distantFuture]];
@@ -276,6 +278,7 @@ SFLazyLoad(NSDateFormatter, formatter, {
 
 #pragma mark - dealloc
 - (void)dealloc {
+    [_timer invalidate];
     NSLog(@"%s", __func__);
 }
 

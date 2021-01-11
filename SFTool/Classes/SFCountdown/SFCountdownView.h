@@ -13,14 +13,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @end
 
-typedef NS_ENUM(NSUInteger, SFCountdownCellStyle) {
-    SFCountdownCellStyleValue = 0,  // 数字
-    SFCountdownCellStyleUnit,       // 单位
-    SFCountdownCellStyleDeadline,   // 截止时间
-    SFCountdownCellStyleExceeded,   // 已结束
-};
 @interface SFCountdownCell : UIView
-@property (nonatomic,assign) SFCountdownCellStyle style;
 @property (nonatomic,copy) NSString *value;
 @end
 
