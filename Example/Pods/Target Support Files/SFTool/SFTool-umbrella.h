@@ -10,11 +10,11 @@
 #endif
 #endif
 
+#import "SFTool.h"
 #import "SFCountdownButton.h"
 #import "SFCountdownLabel.h"
 #import "SFCountdownView.h"
 #import "SFPhotoPicker.h"
-#import "SFTool.h"
 
 FOUNDATION_EXPORT double SFToolVersionNumber;
 FOUNDATION_EXPORT const unsigned char SFToolVersionString[];

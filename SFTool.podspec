@@ -30,8 +30,19 @@ TODO: Add long description of the pod here.
 
   s.ios.deployment_target = '9.0'
 
-  s.public_header_files = 'SFTool/Class/SFTool.h'
-  s.source_files = 'SFTool/Classes/**/*'
+  s.source_files = 'SFTool/Classes/SFTool.h'
+  s.public_header_files = 'SFTool/Classes/SFTool.h'
+  
+  # SFCountdown
+  s.subspec 'SFCountdown' do |ss|
+    ss.source_files = 'SFTool/Classes/SFCountdown/*.{h,m}'
+  end
+
+  # SFPhotoPicker
+  s.subspec 'SFPhotoPicker' do |ss|
+    ss.source_files = 'SFTool/Classes/SFPhotoPicker/*.{h,m}'
+  end
+
   
   # s.resource_bundles = {
   #   'SFTool' => ['SFTool/Assets/*.png']

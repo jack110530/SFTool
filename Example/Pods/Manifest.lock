@@ -33,6 +33,18 @@ PODS:
     - SFCategory
     - SFCrashInspector
     - SFMacro
+    - SFTool/SFCountdown (= 0.1.0)
+    - SFTool/SFPhotoPicker (= 0.1.0)
+  - SFTool/SFCountdown (0.1.0):
+    - Masonry
+    - SFCategory
+    - SFCrashInspector
+    - SFMacro
+  - SFTool/SFPhotoPicker (0.1.0):
+    - Masonry
+    - SFCategory
+    - SFCrashInspector
+    - SFMacro
   - YYCategories (1.0.4):
     - YYCategories/no-arc (= 1.0.4)
   - YYCategories/no-arc (1.0.4)
@@ -76,7 +88,7 @@ SPEC CHECKSUMS:
   SFCategory: 4adc606da20bcce6620f10a89cda3dc2b105274c
   SFCrashInspector: b89568cbbb18d9318984911789dacde5efa02236
   SFMacro: feaf9eaac7cfa4797a99a3d8119895ff843335fe
-  SFTool: 100bcf21fc83c67a27aa9b4e51165711b0accea4
+  SFTool: d951334daf2ab29f7c8e9420ead5132b130f426f
   YYCategories: 6bcd4314c6661a561410dce4a793379ebd306abd
 
 PODFILE CHECKSUM: 53b87a3f226eee12dd4308092cd367a4667cf5a9

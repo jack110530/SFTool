@@ -18,8 +18,8 @@
   "platforms": {
     "ios": "9.0"
   },
-  "public_header_files": "SFTool/Class/SFTool.h",
-  "source_files": "SFTool/Classes/**/*",
+  "source_files": "SFTool/Classes/SFTool.h",
+  "public_header_files": "SFTool/Classes/SFTool.h",
   "frameworks": [
     "UIKit",
     "Foundation"
@@ -37,5 +37,15 @@
     "SFCrashInspector": [
 
     ]
-  }
+  },
+  "subspecs": [
+    {
+      "name": "SFCountdown",
+      "source_files": "SFTool/Classes/SFCountdown/*.{h,m}"
+    },
+    {
+      "name": "SFPhotoPicker",
+      "source_files": "SFTool/Classes/SFPhotoPicker/*.{h,m}"
+    }
+  ]
 }
