@@ -11,6 +11,7 @@
 #import "SFCountdownLabelDemo.h"
 #import "SFPhotoPickerDemo.h"
 #import "SFCountdownViewDemo.h"
+#import "SFCountdownButtonDemo.h"
 
 
 @interface SFViewController ()<UITableViewDelegate,UITableViewDataSource>
@@ -29,6 +30,7 @@
         @"SFPhotoPickerDemo",
         @"SFCountdownLabelDemo",
         @"SFCountdownViewDemo",
+        @"SFCountdownButtonDemo",
     ];
 }
 

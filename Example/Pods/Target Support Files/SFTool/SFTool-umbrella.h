@@ -10,6 +10,7 @@
 #endif
 #endif
 
+#import "SFCountdownButton.h"
 #import "SFCountdownLabel.h"
 #import "SFCountdownView.h"
 #import "SFPhotoPicker.h"

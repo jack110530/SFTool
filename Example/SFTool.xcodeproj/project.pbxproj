@@ -11,6 +11,8 @@
 		51865DE225ABE6380026CDBF /* SFCountdownLabelDemo.m in Sources */ = {isa = PBXBuildFile; fileRef = 51865DE125ABE6380026CDBF /* SFCountdownLabelDemo.m */; };
 		51865DE825ABEA0F0026CDBF /* SFPhotoPickerDemo.m in Sources */ = {isa = PBXBuildFile; fileRef = 51865DE725ABEA0E0026CDBF /* SFPhotoPickerDemo.m */; };
 		51865EAB25AC2AB70026CDBF /* SFCountdownViewDemo.m in Sources */ = {isa = PBXBuildFile; fileRef = 51865EAA25AC2AB70026CDBF /* SFCountdownViewDemo.m */; };
+		51865F4725AC44A10026CDBF /* SFCountdownButtonDemo.m in Sources */ = {isa = PBXBuildFile; fileRef = 51865F4525AC44A10026CDBF /* SFCountdownButtonDemo.m */; };
+		51865F4825AC44A10026CDBF /* SFCountdownButtonDemo.xib in Resources */ = {isa = PBXBuildFile; fileRef = 51865F4625AC44A10026CDBF /* SFCountdownButtonDemo.xib */; };
 		6003F58E195388D20070C39A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F58D195388D20070C39A /* Foundation.framework */; };
 		6003F590195388D20070C39A /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F58F195388D20070C39A /* CoreGraphics.framework */; };
 		6003F592195388D20070C39A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F591195388D20070C39A /* UIKit.framework */; };
@@ -50,6 +52,9 @@
 		51865DE725ABEA0E0026CDBF /* SFPhotoPickerDemo.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SFPhotoPickerDemo.m; sourceTree = "<group>"; };
 		51865EA925AC2AB70026CDBF /* SFCountdownViewDemo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SFCountdownViewDemo.h; sourceTree = "<group>"; };
 		51865EAA25AC2AB70026CDBF /* SFCountdownViewDemo.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SFCountdownViewDemo.m; sourceTree = "<group>"; };
+		51865F4425AC44A10026CDBF /* SFCountdownButtonDemo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SFCountdownButtonDemo.h; sourceTree = "<group>"; };
+		51865F4525AC44A10026CDBF /* SFCountdownButtonDemo.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SFCountdownButtonDemo.m; sourceTree = "<group>"; };
+		51865F4625AC44A10026CDBF /* SFCountdownButtonDemo.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SFCountdownButtonDemo.xib; sourceTree = "<group>"; };
 		6003F58A195388D20070C39A /* SFTool_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SFTool_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6003F58D195388D20070C39A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		6003F58F195388D20070C39A /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -122,6 +127,9 @@
 				51865DE125ABE6380026CDBF /* SFCountdownLabelDemo.m */,
 				51865EA925AC2AB70026CDBF /* SFCountdownViewDemo.h */,
 				51865EAA25AC2AB70026CDBF /* SFCountdownViewDemo.m */,
+				51865F4425AC44A10026CDBF /* SFCountdownButtonDemo.h */,
+				51865F4525AC44A10026CDBF /* SFCountdownButtonDemo.m */,
+				51865F4625AC44A10026CDBF /* SFCountdownButtonDemo.xib */,
 			);
 			name = "SFCountdownDemo(倒计时)";
 			sourceTree = "<group>";
@@ -309,6 +317,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				873B8AEB1B1F5CCA007FD442 /* Main.storyboard in Resources */,
+				51865F4825AC44A10026CDBF /* SFCountdownButtonDemo.xib in Resources */,
 				71719F9F1E33DC2100824A3D /* LaunchScreen.storyboard in Resources */,
 				6003F5A9195388D20070C39A /* Images.xcassets in Resources */,
 				6003F598195388D20070C39A /* InfoPlist.strings in Resources */,
@@ -409,6 +418,7 @@
 				51865DE225ABE6380026CDBF /* SFCountdownLabelDemo.m in Sources */,
 				6003F59E195388D20070C39A /* SFAppDelegate.m in Sources */,
 				6003F5A7195388D20070C39A /* SFViewController.m in Sources */,
+				51865F4725AC44A10026CDBF /* SFCountdownButtonDemo.m in Sources */,
 				51865DE825ABEA0F0026CDBF /* SFPhotoPickerDemo.m in Sources */,
 				6003F59A195388D20070C39A /* main.m in Sources */,
 			);

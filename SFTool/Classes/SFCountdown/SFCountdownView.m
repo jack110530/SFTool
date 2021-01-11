@@ -81,7 +81,7 @@ typedef NS_ENUM(NSUInteger, SFCountdownState) {
 
 
 #pragma mark - func
-- (void)timerEvent:(NSTimer *)sender {
+- (void)counting {
     self.t--;
     if (self.t < 0) {
         [self.timer setFireDate:[NSDate distantFuture]];
@@ -364,8 +364,8 @@ typedef NS_ENUM(NSUInteger, SFCountdownState) {
     return 0;
 }
 SFLazyLoad(NSTimer, timer, {
-    // SFCrachInspector解决了循环引用的问题
-    _timer = [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(timerEvent:) userInfo:nil repeats:YES];
+    SFProxy *proxy = [SFProxy proxyWithTarget:self];
+    _timer = [NSTimer scheduledTimerWithTimeInterval:1 target:proxy selector:@selector(counting) userInfo:nil repeats:YES];
     [[NSRunLoop mainRunLoop] addTimer:_timer forMode:NSRunLoopCommonModes];
     [_timer setFireDate:[NSDate distantFuture]];
 })

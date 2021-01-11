@@ -13,7 +13,7 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    [SFCrashInspectorManager openAllCrashInspector];
+//    [SFCrashInspectorManager openAllCrashInspector];
     return YES;
 }
 
