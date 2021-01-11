@@ -11,6 +11,7 @@
 #endif
 
 #import "SFCountdownLabel.h"
+#import "SFCountdownView.h"
 #import "SFPhotoPicker.h"
 #import "SFTool.h"
 

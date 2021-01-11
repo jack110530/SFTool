@@ -330,6 +330,7 @@
 				"${PODS_ROOT}/Target Support Files/Pods-SFTool_Example/Pods-SFTool_Example-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Masonry/Masonry.framework",
 				"${BUILT_PRODUCTS_DIR}/SFCategory/SFCategory.framework",
+				"${BUILT_PRODUCTS_DIR}/SFCrashInspector/SFCrashInspector.framework",
 				"${BUILT_PRODUCTS_DIR}/SFMacro/SFMacro.framework",
 				"${BUILT_PRODUCTS_DIR}/SFTool/SFTool.framework",
 				"${BUILT_PRODUCTS_DIR}/YYCategories/YYCategories.framework",
@@ -338,6 +339,7 @@
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Masonry.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SFCategory.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SFCrashInspector.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SFMacro.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SFTool.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/YYCategories.framework",
