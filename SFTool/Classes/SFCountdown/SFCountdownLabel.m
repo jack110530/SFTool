@@ -7,6 +7,7 @@
 
 #import "SFCountdownLabel.h"
 #import <SFMacro/SFFunc.h>
+#import <SFCrashInspector/SFProxy.h>
 
 #define SFDefaultFmt_deadline   @"yyyy/MM/dd HH:mm:ss截止"
 #define SFDefaultFmt_day        @"天"
@@ -265,8 +266,9 @@
     return 0;
 }
 SFLazyLoad(NSTimer, timer, {
-    // 这里的循环引用问题，会在SFCrashInspector库中解决
-    _timer = [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(timerEvent:) userInfo:nil repeats:YES];
+    // 使用消息转发来解决循环引用的问题
+    SFProxy *proxy = [SFProxy proxyWithTarget:self];
+    _timer = [NSTimer scheduledTimerWithTimeInterval:1 target:proxy selector:@selector(timerEvent:) userInfo:nil repeats:YES];
     [[NSRunLoop mainRunLoop] addTimer:_timer forMode:NSRunLoopCommonModes];
     [_timer setFireDate:[NSDate distantFuture]];
 })
