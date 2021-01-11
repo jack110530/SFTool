@@ -9,8 +9,9 @@
 #import "SFViewController.h"
 // demo
 #import "SFCountdownLabelDemo.h"
+#import "SFPhotoPickerDemo.h"
 
-#import <SFTool/SFTool.h>
+
 
 @interface SFViewController ()<UITableViewDelegate,UITableViewDataSource>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
@@ -24,7 +25,10 @@
     [super viewDidLoad];
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
-    self.datas = @[@"SFCountdownLabelDemo"];
+    self.datas = @[
+        @"SFPhotoPickerDemo",
+        @"SFCountdownLabelDemo"
+    ];
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
@@ -47,9 +51,6 @@
 }
 
 
-- (void)btnClick {
-    [SFPhotoPicker showIn:self title:@"小星星" msg:@"你就是我的小星星"];
-}
 
 - (void)didReceiveMemoryWarning
 {
