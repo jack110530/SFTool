@@ -14,6 +14,7 @@
 
 // MARK: SFCountdown
 #import "SFCountdownLabel.h"
+#import "SFCountdownView.h"
 
 
 #endif /* SFTool_h */

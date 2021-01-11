@@ -10,7 +10,7 @@
 #import <SFTool/SFTool.h>
 
 @interface SFCountdownLabelDemo ()
-{}
+
 @property (nonatomic,strong) SFCountdownLabel *countdownLabel;
 @end
 

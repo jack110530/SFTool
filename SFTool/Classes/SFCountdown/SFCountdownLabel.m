@@ -266,9 +266,8 @@
     return 0;
 }
 SFLazyLoad(NSTimer, timer, {
-    // 使用消息转发来解决循环引用的问题
-    SFProxy *proxy = [SFProxy proxyWithTarget:self];
-    _timer = [NSTimer scheduledTimerWithTimeInterval:1 target:proxy selector:@selector(timerEvent:) userInfo:nil repeats:YES];
+    // SFCrachInspector解决了循环引用的问题
+    _timer = [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(timerEvent:) userInfo:nil repeats:YES];
     [[NSRunLoop mainRunLoop] addTimer:_timer forMode:NSRunLoopCommonModes];
     [_timer setFireDate:[NSDate distantFuture]];
 })

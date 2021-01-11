@@ -10,7 +10,7 @@
 // demo
 #import "SFCountdownLabelDemo.h"
 #import "SFPhotoPickerDemo.h"
-
+#import "SFCountdownViewDemo.h"
 
 
 @interface SFViewController ()<UITableViewDelegate,UITableViewDataSource>
@@ -27,7 +27,8 @@
     self.tableView.dataSource = self;
     self.datas = @[
         @"SFPhotoPickerDemo",
-        @"SFCountdownLabelDemo"
+        @"SFCountdownLabelDemo",
+        @"SFCountdownViewDemo",
     ];
 }
 
