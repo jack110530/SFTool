@@ -8,10 +8,7 @@
 
 #import "SFViewController.h"
 // demo
-#import "SFCountdownLabelDemo.h"
 #import "SFPhotoPickerDemo.h"
-#import "SFCountdownViewDemo.h"
-#import "SFCountdownButtonDemo.h"
 
 
 @interface SFViewController ()<UITableViewDelegate,UITableViewDataSource>

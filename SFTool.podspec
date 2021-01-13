@@ -33,10 +33,6 @@ TODO: Add long description of the pod here.
   s.source_files = 'SFTool/Classes/SFTool.h'
   s.public_header_files = 'SFTool/Classes/SFTool.h'
   
-  # SFCountdown
-  s.subspec 'SFCountdown' do |ss|
-    ss.source_files = 'SFTool/Classes/SFCountdown/*.{h,m}'
-  end
 
   # SFPhotoPicker
   s.subspec 'SFPhotoPicker' do |ss|

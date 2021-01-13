@@ -40,10 +40,6 @@
   },
   "subspecs": [
     {
-      "name": "SFCountdown",
-      "source_files": "SFTool/Classes/SFCountdown/*.{h,m}"
-    },
-    {
       "name": "SFPhotoPicker",
       "source_files": "SFTool/Classes/SFPhotoPicker/*.{h,m}"
     }
