@@ -42,6 +42,10 @@
     {
       "name": "SFPhotoPicker",
       "source_files": "SFTool/Classes/SFPhotoPicker/*.{h,m}"
+    },
+    {
+      "name": "SFCleanCacheTool",
+      "source_files": "SFTool/Classes/SFCleanCacheTool/*.{h,m}"
     }
   ]
 }

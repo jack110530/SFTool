@@ -39,6 +39,11 @@ TODO: Add long description of the pod here.
     ss.source_files = 'SFTool/Classes/SFPhotoPicker/*.{h,m}'
   end
 
+  # SFCleanCacheTool
+  s.subspec 'SFCleanCacheTool' do |ss|
+    ss.source_files = 'SFTool/Classes/SFCleanCacheTool/*.{h,m}'
+  end
+
   
   # s.resource_bundles = {
   #   'SFTool' => ['SFTool/Assets/*.png']

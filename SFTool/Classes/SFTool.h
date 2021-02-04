@@ -12,6 +12,9 @@
 // MARK: 本地图片选择
 #import "SFPhotoPicker.h"
 
+// MARK: 清理缓存
+#import "SFCleanCacheTool.h"
+
 
 
 #endif /* SFTool_h */

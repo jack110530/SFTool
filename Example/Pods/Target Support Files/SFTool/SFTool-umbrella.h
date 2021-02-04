@@ -11,6 +11,7 @@
 #endif
 
 #import "SFTool.h"
+#import "SFCleanCacheTool.h"
 #import "SFPhotoPicker.h"
 
 FOUNDATION_EXPORT double SFToolVersionNumber;
