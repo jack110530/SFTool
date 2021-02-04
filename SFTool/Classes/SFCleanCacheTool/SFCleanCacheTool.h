@@ -11,26 +11,18 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface SFCleanCacheTool : NSObject
 
-/// 获取缓存大小（单位:M）
+/// 获取缓存大小（异步，单位:M）
++ (void)getCachesFolderSizeSuccess:(void(^)(float size))success;
+
+/// 获取缓存大小（同步单位:M）
 + (float)getCachesFolderSize;
 
-/// 清理缓存
+/// 清理缓存（异步）
 /// @param success 清理成功
 + (void)cleanCachesSuccess:(void(^)(void))success;
 
-
-/// 计算整个目录大小（单位:M）
-/// @param folderPath 路径
-+ (float)folderSizeAtPath:(NSString*)folderPath;
-
-/// 计算单个文件大小
-/// @param filePath 文件路径
-+ (long long)fileSizeAtPath:(NSString *)filePath;
-
-/// 清理
-/// @param folderPath 路径
-/// @param success 清理成功回调
-+ (void)cleanAtPath:(NSString*)folderPath success:(void(^)(void))success;
+/// 清理缓存（同步）
++ (void)cleanCaches;
 
 @end
 

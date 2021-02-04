@@ -10,7 +10,17 @@
 @implementation SFCleanCacheTool
 
 
-/// 获取缓存大小（单位:M）
+/// 获取缓存大小（异步，单位:M）
++ (void)getCachesFolderSizeSuccess:(void(^)(float size))success {
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        float size = [self getCachesFolderSize];
+        dispatch_async(dispatch_get_main_queue(), ^{
+            success(size);
+        });
+    });
+}
+
+/// 获取缓存大小（同步单位:M）
 + (float)getCachesFolderSize {
     NSString *folderPath=[NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES) firstObject];
     float folderSize = [self folderSizeAtPath:folderPath];
@@ -19,16 +29,28 @@
     return folderSize;
 }
 
-/// 清理缓存
+/// 清理缓存（异步）
 /// @param success 清理成功
 + (void)cleanCachesSuccess:(void(^)(void))success {
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        [self cleanCaches];
+        dispatch_async(dispatch_get_main_queue(), ^{
+            success();
+        });
+    });
+}
+
+/// 清理缓存（同步）
++ (void)cleanCaches{
     NSString *folderPath=[NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES) firstObject];
     //SDWebImage框架自身清理缓存的实现
     //[[SDImageCache sharedImageCache] clearMemory];
-    return [self cleanAtPath:folderPath success:success];
+    [self cleanAtPath:folderPath];
 }
 
 
+
+#pragma mark - 辅助计算，同步
 /// 计算整个目录大小（单位:M）
 /// @param folderPath 路径
 + (float)folderSizeAtPath:(NSString*)folderPath {
@@ -58,18 +80,12 @@
 
 /// 清理
 /// @param folderPath 路径
-/// @param success 清理成功回调
-+ (void)cleanAtPath:(NSString*)folderPath success:(void(^)(void))success {
-    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-        NSArray *subpaths = [[NSFileManager defaultManager] contentsOfDirectoryAtPath:folderPath error:nil];
-        for (NSString *subPath in subpaths) {
-            NSString *filePath = [folderPath stringByAppendingPathComponent:subPath];
-            [[NSFileManager defaultManager] removeItemAtPath:filePath error:nil];
-        }
-        dispatch_async(dispatch_get_main_queue(), ^{
-            success();
-        });
-    });
++ (void)cleanAtPath:(NSString*)folderPath {
+    NSArray *subpaths = [[NSFileManager defaultManager] contentsOfDirectoryAtPath:folderPath error:nil];
+    for (NSString *subPath in subpaths) {
+        NSString *filePath = [folderPath stringByAppendingPathComponent:subPath];
+        [[NSFileManager defaultManager] removeItemAtPath:filePath error:nil];
+    }
 }
 
 @end
