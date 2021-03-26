@@ -43,6 +43,11 @@ TODO: Add long description of the pod here.
   s.subspec 'SFCleanCacheTool' do |ss|
     ss.source_files = 'SFTool/Classes/SFCleanCacheTool/*.{h,m}'
   end
+  
+  # SFThreadTool
+  s.subspec 'SFThreadTool' do |ss|
+    ss.source_files = 'SFTool/Classes/SFThreadTool/*.{h,m}'
+  end
 
   
   # s.resource_bundles = {

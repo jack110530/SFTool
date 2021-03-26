@@ -46,6 +46,10 @@
     {
       "name": "SFCleanCacheTool",
       "source_files": "SFTool/Classes/SFCleanCacheTool/*.{h,m}"
+    },
+    {
+      "name": "SFThreadTool",
+      "source_files": "SFTool/Classes/SFThreadTool/*.{h,m}"
     }
   ]
 }

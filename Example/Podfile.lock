@@ -35,12 +35,18 @@ PODS:
     - SFMacro
     - SFTool/SFCleanCacheTool (= 0.1.0)
     - SFTool/SFPhotoPicker (= 0.1.0)
+    - SFTool/SFThreadTool (= 0.1.0)
   - SFTool/SFCleanCacheTool (0.1.0):
     - Masonry
     - SFCategory
     - SFCrashInspector
     - SFMacro
   - SFTool/SFPhotoPicker (0.1.0):
+    - Masonry
+    - SFCategory
+    - SFCrashInspector
+    - SFMacro
+  - SFTool/SFThreadTool (0.1.0):
     - Masonry
     - SFCategory
     - SFCrashInspector
@@ -88,9 +94,9 @@ SPEC CHECKSUMS:
   SFCategory: 4adc606da20bcce6620f10a89cda3dc2b105274c
   SFCrashInspector: b89568cbbb18d9318984911789dacde5efa02236
   SFMacro: feaf9eaac7cfa4797a99a3d8119895ff843335fe
-  SFTool: a055ebd1989e9a1c39e32001e8aef99cc8e36307
+  SFTool: 7cfe592de464c81ac38d030cc6f391d71ceb1093
   YYCategories: 6bcd4314c6661a561410dce4a793379ebd306abd
 
 PODFILE CHECKSUM: 53b87a3f226eee12dd4308092cd367a4667cf5a9
 
-COCOAPODS: 1.9.3
+COCOAPODS: 1.10.1

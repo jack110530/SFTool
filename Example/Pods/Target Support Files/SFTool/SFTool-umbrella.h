@@ -13,6 +13,7 @@
 #import "SFTool.h"
 #import "SFCleanCacheTool.h"
 #import "SFPhotoPicker.h"
+#import "SFThreadTool.h"
 
 FOUNDATION_EXPORT double SFToolVersionNumber;
 FOUNDATION_EXPORT const unsigned char SFToolVersionString[];
